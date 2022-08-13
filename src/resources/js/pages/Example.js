@@ -11,7 +11,7 @@ function Example() {
                         <div className="card-header">動作確認をします</div>
 
                         <div className="card-body">I'm an example component!</div>
-                        <Button color="primary" variant="contained">Hello World</Button> 
+                        <Button color="primary" variant="contained" href='/'>home</Button> 
                     </div>
                 </div>
             </div>
@@ -20,7 +20,3 @@ function Example() {
 }
 
 export default Example;
-
-if (document.getElementById('app')) {
-    ReactDOM.render(<Example />, document.getElementById('app'));
-}

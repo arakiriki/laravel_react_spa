@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'api'], function(){
+    Route::get('posts', 'App\Http\Controllers\Api\PostController@index');
+});
 
 Route::get('{any}', function () {
     return view('app');

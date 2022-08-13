@@ -4,6 +4,7 @@ import { Button, Card } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import MainTable from '../components/MainTable';
 import axios from 'axios';
+import PostForm from '../components/PostForm';
 
 const useStyles = makeStyles((theme) => createStyles({
   card: {
@@ -15,28 +16,16 @@ const useStyles = makeStyles((theme) => createStyles({
 //ヘッダーのコンテンツ用の配列定義
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
-//rowsの定義
-// let rows = [
-//   {
-//     name: "モーリー",
-//     content: "肩トレ",
-//     editBtn: <Button color="secondary" variant='contained'>編集</Button>,
-//     deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
-//   },{
-//     name: "ドンキーコング",
-//     content: "バナナ補給",
-//     editBtn: <Button color="secondary" variant='contained'>編集</Button>,
-//     deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
-//   },
-// ];
-
-
 
 function Home() {
     //定義したスタイルを利用するための設定
     const classes = useStyles();
 
+    //postsの状態を管理する
     const [posts,setPosts] = useState([]);
+
+    //フォームの入力値を管理するステートの定義
+    const [formData, setFormData] = useState({name:'',content:''});
 
     useEffect(() => {
       getPostData();
@@ -52,6 +41,36 @@ function Home() {
       .catch(() => {
         console.log('通信に失敗しました。');
       });
+    }
+
+    //入力がされたら入力値を変更するための関数
+    const inputChange = (e) => {
+      const key = e.target.name;
+      const value = e.target.value;
+      formData[key] = value;
+      let data = Object.assign({},formData);
+      setFormData(data);
+    }
+
+    const createPost = async() => {
+      if(formData == ''){
+        return;
+      }
+
+      await axios
+       .post('api/posts/create',{
+        name : formData.name,
+        content : formData.content,
+       })
+       .then((res) => {
+        const tempPosts = posts;
+        tempPosts.push(res.data);
+        setPosts(tempPosts);
+        setFormData('');
+       })
+       .catch(error => {
+        console.log(error);
+       });
     }
 
     let rows = [];
@@ -70,7 +89,9 @@ function Home() {
                     <div className="card">
                         <h1>タスク管理</h1>
                         <Card className={classes.card}>
-                            {/* テーブル部分の定義 */}
+                            <PostForm data={formData} btnFunc={createPost} inputChange={inputChange} />
+                        </Card>
+                        <Card className={classes.card}>                    
                             <MainTable headerList={headerList} rows={rows} />
                         </Card>
                     </div>

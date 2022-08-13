@@ -16,19 +16,19 @@ const useStyles = makeStyles((theme) => createStyles({
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
 //rowsの定義
-let rows = [
-  {
-    name: "モーリー",
-    content: "肩トレ",
-    editBtn: <Button color="secondary" variant='contained'>編集</Button>,
-    deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
-  },{
-    name: "ドンキーコング",
-    content: "バナナ補給",
-    editBtn: <Button color="secondary" variant='contained'>編集</Button>,
-    deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
-  },
-];
+// let rows = [
+//   {
+//     name: "モーリー",
+//     content: "肩トレ",
+//     editBtn: <Button color="secondary" variant='contained'>編集</Button>,
+//     deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
+//   },{
+//     name: "ドンキーコング",
+//     content: "バナナ補給",
+//     editBtn: <Button color="secondary" variant='contained'>編集</Button>,
+//     deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
+//   },
+// ];
 
 
 
@@ -53,6 +53,15 @@ function Home() {
         console.log('通信に失敗しました。');
       });
     }
+
+    let rows = [];
+    posts.map((post) =>
+      rows.push({
+        name: post.name,
+        content: post.content,
+        editBtn: <Button color="secondary" variant='contained'>編集</Button>,
+        deleteBtn: <Button color="primary" variant='contained'>完了</Button>,
+      }));
 
     return (
         <div className="container">

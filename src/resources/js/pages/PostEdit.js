@@ -67,11 +67,11 @@ function PostEdit(props) {
     }
 
     return (
-        <div className="container">
+        <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <h1>タスク編集</h1>
+                        <h1 className='text-center mt-3'>タスク編集</h1>
                         <Card className={classes.card}>
                             <PostFrom data={editData}  inputChange={inputChange} btnFunc={updatePost}　/>
                         </Card>

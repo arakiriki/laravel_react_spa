@@ -8,7 +8,7 @@ import PostForm from '../components/PostForm';
 
 const useStyles = makeStyles((theme) => createStyles({
   card: {
-      margin: theme.spacing(5),
+      margin: theme.spacing(1.5),
       padding: theme.spacing(3),
   },
 }));
@@ -98,11 +98,11 @@ function Home() {
       }));
 
     return (
-        <div className="container">
+        <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-10">
                     <div className="card">
-                        <h1>タスク管理</h1>
+                        <h1 className='text-center mt-3'>todo task</h1>
                         <Card className={classes.card}>
                             <PostForm data={formData} btnFunc={createPost} inputChange={inputChange} />
                         </Card>

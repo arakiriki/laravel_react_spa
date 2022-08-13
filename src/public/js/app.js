@@ -20212,6 +20212,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -20226,31 +20228,29 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["defaul
 });
 
 function PostFrom(props) {
+  var _jsx2, _jsx3;
+
   var classes = useStyles();
   var data = props.data,
       inputChange = props.inputChange,
       btnFunc = props.btnFunc;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], (_jsx2 = {
       id: "name",
-      label: "\u30BF\u30B9\u30AF\u540D",
+      label: "task",
       variant: "outlined",
-      className: classes.textArea,
-      name: "name",
-      value: data.name,
-      onChange: inputChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      className: classes.textArea
+    }, _defineProperty(_jsx2, "className", "mt-3 d-flex justify-content-center"), _defineProperty(_jsx2, "name", "name"), _defineProperty(_jsx2, "value", data.name), _defineProperty(_jsx2, "onChange", inputChange), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], (_jsx3 = {
       id: "content",
-      label: "\u5185\u5BB9",
+      label: "content",
       variant: "outlined",
-      className: classes.textArea,
-      name: "content",
-      value: data.content,
-      onChange: inputChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      className: classes.textArea
+    }, _defineProperty(_jsx3, "className", "mt-3 d-flex justify-content-center"), _defineProperty(_jsx3, "name", "content"), _defineProperty(_jsx3, "value", data.content), _defineProperty(_jsx3, "onChange", inputChange), _jsx3)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["default"], {
       color: "primary",
       variant: "contained",
       href: "/",
+      className: "mt-3 d-flex justify-content-center",
       onClick: btnFunc,
       children: "\u767B\u9332"
     })]
@@ -20365,7 +20365,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["default"])(function (theme) {
   return (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["default"])({
     card: {
-      margin: theme.spacing(5),
+      margin: theme.spacing(1.5),
       padding: theme.spacing(3)
     }
   });
@@ -20508,7 +20508,7 @@ function Home() {
     });
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "container",
+    className: "container mt-5",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "row justify-content-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -20516,7 +20516,8 @@ function Home() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-            children: "\u30BF\u30B9\u30AF\u7BA1\u7406"
+            className: "text-center mt-3",
+            children: "todo task"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["default"], {
             className: classes.card,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_PostForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -20642,7 +20643,7 @@ function PostEdit(props) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
+    className: "container mt-5",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "row justify-content-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -20650,6 +20651,7 @@ function PostEdit(props) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            className: "text-center mt-3",
             children: "\u30BF\u30B9\u30AF\u7DE8\u96C6"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["default"], {
             className: classes.card,

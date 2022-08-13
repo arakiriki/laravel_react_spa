@@ -18,12 +18,11 @@ function PostFrom(props) {
     const {data, inputChange, btnFunc} = props;
 
     return (
-        <form>
-            <TextField id="name" label="タスク名" variant="outlined" className={classes.textArea} name="name" value={data.name} onChange={inputChange}/>
-            <TextField id="content" label="内容" variant="outlined" className={classes.textArea} name="content" value={data.content} onChange={inputChange} />
-            <Button color="primary" variant="contained" href="/" onClick={btnFunc} >登録</Button>
+        <form className=''>
+            <TextField id="name" label="task" variant="outlined" className={classes.textArea} className='mt-3 d-flex justify-content-center' name="name" value={data.name} onChange={inputChange}/>
+            <TextField id="content" label="content" variant="outlined" className={classes.textArea} className='mt-3 d-flex justify-content-center' name="content" value={data.content} onChange={inputChange} />
+            <Button color="primary" variant="contained" href="/" className='mt-3 d-flex justify-content-center' onClick={btnFunc} >登録</Button>
         </form>
-
     );
 }
 
